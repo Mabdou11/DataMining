@@ -1,0 +1,23 @@
+#side {
+	-fx-background-color : #333645;
+}
+
+#btn {
+	-fx-background-color: transparent;
+}
+
+#btn:hover {
+	-fx-background-color: #202332;
+}
+
+#startBtn:hover {
+	   -fx-background-color: linear-gradient(from 25px 25px to 100px 100px, #16A085, #F4D03F);
+}
+
+#PaneParams {
+	-fx-border-style: solid inside;
+	-fx-border-width: 1.5;
+	-fx-border-radius: 25;
+	-fx-border-color: linear-gradient(from 50px 50px to 100px 100px, #FF512F, #1A2980);
+	
+}

@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<Pane id="MainPanel" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" stylesheets="@css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIController">
+   <children>
+      <Pane id="side" prefHeight="700.0" prefWidth="200.0" stylesheets="@css.css">
+         <children>
+            <Label layoutX="-26.0" layoutY="116.0" prefHeight="20.0" prefWidth="230.0" text="______________">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.5" endY="0.8761904761904762" startX="0.44285714285714284" startY="0.24285714285714288">
+                     <stops>
+                        <Stop color="#3b6b37" />
+                        <Stop color="#5f8486" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label alignment="CENTER" ellipsisString="" prefHeight="75.0" prefWidth="200.0" text="M E N U" textAlignment="RIGHT" textOverrun="CENTER_WORD_ELLIPSIS">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <effect>
+                  <Bloom threshold="0.0" />
+               </effect>
+               <textFill>
+                  <RadialGradient centerX="0.5055555555555555" centerY="0.45714285714285713" radius="0.5">
+                     <stops>
+                        <Stop color="#724343" />
+                        <Stop color="#ff4848" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <Label alignment="CENTER" layoutX="10.0" layoutY="66.0" prefHeight="26.0" prefWidth="145.0" text="Instances files" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Raleway ExtraBold" size="20.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label id="btn" alignment="CENTER" layoutY="92.0" onMouseClicked="#DataImport" prefHeight="53.0" prefWidth="200.0" stylesheets="@css.css" text="     Import Data">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="0.6952380952380952" endY="0.6761904761904762" startX="0.6285714285714286" startY="0.10952380952380952">
+                     <stops>
+                        <Stop color="#62906e" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="21.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@document-file-icon%20(2).png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutY="321.0" prefHeight="20.0" prefWidth="200.0" text="Options" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Raleway ExtraBold" size="24.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="0.5" endY="0.8761904761904762" startX="0.44285714285714284" startY="0.24285714285714288">
+                     <stops>
+                        <Stop color="#1fe02673" />
+                        <Stop color="#70dee4" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            
+            <Label layoutX="-25.0" layoutY="256.0" prefHeight="44.0" prefWidth="230.0" text="______________">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.5" endY="0.8761904761904762" startX="0.44285714285714284" startY="0.24285714285714288">
+                     <stops>
+                        <Stop color="#5a739c" />
+                        <Stop color="#70dee4" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label id="btn" fx:id="showbtn" alignment="CENTER" layoutY="356.0" onMouseClicked="#ShowData" prefHeight="53.0" prefWidth="200.0" stylesheets="@css.css" text="Show Data" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Raleway ExtraBold" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label id="btn" fx:id="mmmbtn" alignment="CENTER" layoutY="409.0" onMouseClicked="#ThreeMs" prefHeight="53.0" prefWidth="200.0" stylesheets="@css.css" text="Mean, Median &amp; Mode" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Raleway ExtraBold" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label id="btn" fx:id="whiskerbtn" alignment="CENTER" layoutY="462.0" onMouseClicked="#WhiskerBox" prefHeight="53.0" prefWidth="200.0" stylesheets="@css.css" text="Box &amp; Whiskers" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Raleway ExtraBold" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label id="btn" fx:id="histogrambtn" alignment="CENTER" layoutY="515.0" onMouseClicked="#Histograms" prefHeight="53.0" prefWidth="200.0" stylesheets="@css.css" text="Histograms" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Raleway ExtraBold" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label id="btn" fx:id="scatterbtn" alignment="CENTER" layoutY="568.0" onMouseClicked="#Scatter" prefHeight="53.0" prefWidth="200.0" stylesheets="@css.css" text="Scatter Plots" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Raleway ExtraBold" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+
+
+
+
+
+
+            <Label id="btn" fx:id="aprioribtn" alignment="CENTER" disable="true" layoutY="356.0" onMouseClicked="#aprioriUI" opacity="0.0" prefHeight="53.0" prefWidth="200.0" stylesheets="@css.css" text="A-Priori" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Raleway ExtraBold" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label id="btn" fx:id="eclatbtn" alignment="CENTER" disable="true" layoutY="409.0" onMouseClicked="#eclatUI" opacity="0.0" prefHeight="53.0" prefWidth="200.0" stylesheets="@css.css" text="ECLAT" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Raleway ExtraBold" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label id="btn" fx:id="kmedoidbtn" alignment="CENTER" disable="true" layoutY="462.0" onMouseClicked="#kmedoidUI" opacity="0.0" prefHeight="53.0" prefWidth="200.0" stylesheets="@css.css" text="K-medoids" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Raleway ExtraBold" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label id="btn" fx:id="claransbtn" alignment="CENTER" disable="true" layoutY="515.0" onMouseClicked="#claransUI" opacity="0.0" prefHeight="53.0" prefWidth="200.0" stylesheets="@css.css" text="CLARANS" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Raleway ExtraBold" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label id="btn" fx:id="scatterpcabtn" alignment="CENTER" disable="true" layoutY="568.0" onMouseClicked="#ScatterClusters" opacity="0.0" prefHeight="53.0" prefWidth="200.0" stylesheets="@css.css" text="random CLARANS Scatter" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Raleway ExtraBold" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+
+
+
+
+
+
+
+
+            <Label id="btn" fx:id="second" alignment="CENTER" disable="true" layoutY="160.0" onMouseClicked="#secondOption" prefHeight="53.0" prefWidth="200.0" stylesheets="@css.css" text="Exploratory study" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="0.9540750915750915" startY="0.2896062271062271">
+                     <stops>
+                        <Stop color="#2fcde0" />
+                        <Stop color="#344fff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+
+            <Label id="btn" fx:id="third" alignment="CENTER" disable="true" layoutY="216.0" onMouseClicked="#thirdOption" prefHeight="65.0" prefWidth="200.0" stylesheets="@css.css" text=" DATAMINING  Techniques " textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="0.27619047619047615" endY="0.6761904761904762" startX="0.2714285714285714" startY="0.38095238095238093">
+                     <stops>
+                        <Stop color="#31d74a" />
+                        <Stop color="#2bad5d" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="summary" alignment="TOP_CENTER" layoutX="235.0" layoutY="14.0" opacity="0.0" prefHeight="37.0" prefWidth="465.0" text="Description of the attributes:" textAlignment="RIGHT" textOverrun="WORD_ELLIPSIS" underline="true">
+         <font>
+            <Font name="Raleway ExtraLight" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.5333333333333333" endY="1.0" startX="0.5523809523809524" startY="0.3380952380952381">
+               <stops>
+                  <Stop color="#d35252" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ScrollPane fx:id="scrollPaneTable" layoutX="203.0" layoutY="63.0" opacity="0.0" prefHeight="634.0" prefWidth="994.0" />
+      <Pane fx:id="mmm" layoutX="201.0" layoutY="104.0" prefHeight="443.0" prefWidth="736.0">
+         <children>
+            <VBox fx:id="mmmV" layoutX="193.0" layoutY="80.0" opacity="0.0">
+               <children>
+                  <Label fx:id="bloodLabel" prefHeight="67.0" prefWidth="200.0" text="Resting Blood Pressure">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#07a18a" />
+                              <Stop color="#220404" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>                     
+                  </Label>
+                  <Label fx:id="cholestoralLabel" prefHeight="67.0" prefWidth="200.0" text="Serum Cholestoral">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#07a18a" />
+                              <Stop color="#220404" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>                     
+                  </Label>
+                  <Label fx:id="HRLabel" prefHeight="67.0" prefWidth="200.0" text="Maximum Heart Rate">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#07a18a" />
+                              <Stop color="#220404" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>                     
+                  </Label>
+               </children>
+            </VBox>
+            <VBox fx:id="meanV" layoutX="421.0" layoutY="80.0" opacity="0.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <JFXTextArea fx:id="mean1" prefHeight="67.0" prefWidth="100.0" text="Loading">
+                     <font>
+                        <Font name="System Font" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+                  <JFXTextArea fx:id="mean2" prefHeight="67.0" prefWidth="100.0" text="Loading&#10;">
+                     <font>
+                        <Font name="System Font" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+                  <JFXTextArea fx:id="mean3" prefHeight="67.0" prefWidth="100.0" text="Loading&#10;">
+                     <font>
+                        <Font name="System Font" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+               </children>
+            </VBox>
+            <VBox fx:id="medianV" layoutX="541.0" layoutY="80.0" opacity="0.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <JFXTextArea fx:id="median1" prefHeight="67.0" prefWidth="100.0" text="Loading&#10;">
+                     <font>
+                        <Font name="System Font" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+                  <JFXTextArea fx:id="median2" prefHeight="67.0" prefWidth="100.0" text="Loading&#10;">
+                     <font>
+                        <Font name="System Font" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+                  <JFXTextArea fx:id="median3" prefHeight="67.0" prefWidth="100.0" text="Loading&#10;">
+                     <font>
+                        <Font name="System Font" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+               </children>
+            </VBox>
+            <VBox fx:id="modeV" layoutX="661.0" layoutY="80.0" opacity="0.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <JFXTextArea fx:id="mode1" prefHeight="67.0" prefWidth="100.0" text="Loading&#10;">
+                     <font>
+                        <Font name="System Font" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+                  <JFXTextArea fx:id="mode2" prefHeight="67.0" prefWidth="100.0" text="Loading&#10;">
+                     <font>
+                        <Font name="System Font" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+                  <JFXTextArea fx:id="mode3" prefHeight="67.0" prefWidth="100.0" text="Loading&#10;">
+                     <font>
+                        <Font name="System Font" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+               </children>
+            </VBox>
+            <HBox fx:id="mmmH" layoutX="421.0" layoutY="14.0" opacity="0.0" prefHeight="67.0" prefWidth="343.0">
+               <children>
+                  <Label fx:id="meanL" prefHeight="67.0" prefWidth="121.0" text="Mean">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#853451" />
+                              <Stop color="#d70c0c" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label fx:id="medianL" prefHeight="67.0" prefWidth="123.0" text="Median">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#853451" />
+                              <Stop color="#d70c0c" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label fx:id="modeL" prefHeight="67.0" prefWidth="99.0" text="Mode">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#853451" />
+                              <Stop color="#d70c0c" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Group fx:id="XYgroup" disable="true" layoutX="225.0" layoutY="19.0" opacity="0.0">
+         <children>
+            <Label layoutY="5.0" text="Chose Attributes">
+               <textFill>
+                  <LinearGradient endX="0.9567307692307693" endY="1.0" startX="0.5336538461538461" startY="0.21153846153846154">
+                     <stops>
+                        <Stop color="#2e7197" />
+                        <Stop color="#77f4f3" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font size="17.0" />
+               </font></Label>
+            <ComboBox fx:id="comboX" layoutX="152.0" prefWidth="150.0" promptText="X Axis" />
+            <ComboBox fx:id="comboY" layoutX="321.0" prefWidth="150.0" promptText="Y Axis" />
+         </children>
+      </Group>
+      <HBox fx:id="boxplotAttributes" layoutX="226.0" layoutY="13.0" prefHeight="37.0" prefWidth="847.0" />
+      <Group fx:id="HistGroup" disable="true" layoutX="225.0" layoutY="19.0" opacity="0.0">
+         <children>
+            <Label layoutY="5.0" text="Chose Attribute">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.9567307692307693" endY="1.0" startX="0.5336538461538461" startY="0.21153846153846154">
+                     <stops>
+                        <Stop color="#2e7197" />
+                        <Stop color="#77f4f3" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <ComboBox fx:id="comboHist" layoutX="172.0" prefWidth="150.0" promptText="X Axis" />
+         </children>
+      </Group>
+      <HBox fx:id="suppConf" disable="true" layoutX="690.0" layoutY="14.0" opacity="0.0" prefHeight="44.0" prefWidth="494.0">
+         <children>
+            <Label prefHeight="53.0" prefWidth="113.0" text="Support" textFill="#34a88f">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="supp" prefHeight="43.0" prefWidth="74.0" />
+            <Label fx:id="confLabel" prefHeight="53.0" prefWidth="165.0" text="   Confidence" textFill="#34a88f">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="conf" prefHeight="40.0" prefWidth="97.0" visibleRowCount="20" />
+         </children>
+      </HBox>
+      <HBox fx:id="kmedHbox" disable="true" layoutX="690.0" layoutY="14.0" opacity="0.0" prefHeight="44.0" prefWidth="494.0">
+         <children>
+            <Label prefHeight="53.0" prefWidth="113.0" text="          K" textFill="#34a88f">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="kmed" prefHeight="43.0" prefWidth="74.0" />
+            <Label fx:id="confLabel1" prefHeight="53.0" prefWidth="165.0" text="    Min Error" textFill="#34a88f">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="kerror" prefHeight="40.0" prefWidth="97.0" visibleRowCount="20" />
+         </children>
+      </HBox>
+      <HBox fx:id="clarHbox" disable="true" layoutX="690.0" layoutY="14.0" opacity="0.0" prefHeight="44.0" prefWidth="494.0">
+         <children>
+            <Label prefHeight="44.0" prefWidth="55.0" text="   K" textFill="#34a88f">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="kclar" prefHeight="43.0" prefWidth="74.0" />
+            <Label fx:id="confLabel11" prefHeight="44.0" prefWidth="129.0" text="  Partitions" textFill="#34a88f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="maxpart" prefHeight="40.0" prefWidth="75.0" visibleRowCount="20" />
+            <Label fx:id="confLabel111" prefHeight="44.0" prefWidth="101.0" text=" Max Iter" textFill="#34a88f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="maxiter" prefHeight="40.0" prefWidth="86.0" />
+         </children>
+      </HBox>
+      
+   </children>
+</Pane>
